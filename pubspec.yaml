@@ -1,21 +1,48 @@
 name: kudi_mobile
-version: 1.0.0+1
+version: 0.0.0
 publish_to: none
 description: A new Flutter project.
-environment: 
-  sdk: '>=3.0.5 <4.0.0'
+environment:
+    sdk: ">=3.0.5 <4.0.0"
 
-dependencies: 
-  cupertino_icons: ^1.0.2
-  get: 4.6.5
-  flutter: 
-    sdk: flutter
+dependencies:
+    cupertino_icons: ^1.0.2
+    get: 4.6.5
+    google_fonts: 5.1.0
+    hexcolor: 3.0.1
+    permission_handler: 10.4.3
+    dio: 5.3.2
+    path_provider: 2.1.0
+    intl: 0.18.1
+    flutter_native_splash: 2.3.2
+    flutter_launcher_icons: 0.13.1
+    flutter:
+        sdk: flutter
 
-dev_dependencies: 
-  flutter_lints: 2.0.2
-  flutter_test: 
-    sdk: flutter
+dev_dependencies:
+    flutter_lints: 2.0.2
+    flutter_test:
+        sdk: flutter
 
-flutter: 
-  uses-material-design: true
+platforms:
+    android: true
+    ios: true
 
+flutter_icons:
+    image_path: lib/infrastructure/assets/app/icon_app.png
+    image_path_android: lib/infrastructure/assets/app/icon_app.png
+    android: true
+    ios: true
+
+flutter_native_splash:
+    color: "#ffffff"
+    image: lib/infrastructure/assets/app/icon_app.png
+    fullscreen: true
+    android: true
+    ios: true
+    web: false
+
+flutter:
+    uses-material-design: true
+    assets:
+        - lib/infrastructure/assets/app/
