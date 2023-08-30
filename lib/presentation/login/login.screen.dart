@@ -1,9 +1,12 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kudi_mobile/infrastructure/components/buttons/primary_button.dart';
 import 'package:kudi_mobile/infrastructure/components/forms/form_input.dart';
 import 'package:carbon_icons/carbon_icons.dart';
 import 'package:kudi_mobile/infrastructure/components/scaffold_container.dart';
+import 'package:kudi_mobile/infrastructure/navigation/routes.dart';
+import 'package:kudi_mobile/presentation/home/home.screen.dart';
 
 import 'controller/login.controller.dart';
 
@@ -19,16 +22,19 @@ class LoginPage extends GetView<LoginController> {
         child: ListView(
           physics: const BouncingScrollPhysics(),
           children: [
+            const SizedBox(
+              height: 50,
+            ),
             Center(
               child: Image.asset(
                 'lib/infrastructure/assets/app/icon_app.png',
                 fit: BoxFit.cover,
                 // width: 135,
-                height: 135,
+                height: 96,
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             const Center(
               child: Text(
@@ -37,7 +43,7 @@ class LoginPage extends GetView<LoginController> {
               ),
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
             FormInput(
                 textInputType: TextInputType.emailAddress,
@@ -48,7 +54,7 @@ class LoginPage extends GetView<LoginController> {
                 obscureText: false,
                 isPassword: false),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             FormInput(
                 textInputType: TextInputType.visiblePassword,
@@ -62,7 +68,7 @@ class LoginPage extends GetView<LoginController> {
                 obscureText: true,
                 isPassword: true),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             PrimaryButton(
               text: "Login",
@@ -73,25 +79,32 @@ class LoginPage extends GetView<LoginController> {
                 await Future.delayed(const Duration(seconds: 2));
 
                 // Return a value if necessary
-                return 'Operation completed';
+                return Get.offAll(HomeScreen());
               },
             ),
             const SizedBox(
               height: 50,
             ),
-            GestureDetector(
-              onTap: () {},
-              child: const Center(
-                child: Text(
-                  'Don\'t have an account? Register here!',
+            Center(
+              child: RichText(
+                  text: TextSpan(children: [
+                const TextSpan(
+                  text: 'Don\'t have an account?',
                   style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    decoration: TextDecoration.underline,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
-              ),
+                TextSpan(
+                  text: ' Register here!',
+                  style: const TextStyle(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () => Get.toNamed(Routes.REGISTER),
+                )
+              ])),
             ),
           ],
         ),

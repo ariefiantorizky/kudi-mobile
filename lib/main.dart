@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:kudi_mobile/presentation/home/controllers/home.controller.dart';
 
 import 'infrastructure/navigation/navigation.dart';
 import 'infrastructure/navigation/routes.dart';
@@ -20,7 +21,6 @@ void main() async {
 
   // set orientation of device only portrait
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-
   runApp(Main(initialRoute));
 }
 
@@ -36,9 +36,10 @@ class Main extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: HexColor('#f1faee'),
+          background: Colors.white,
           primary: Colors.black,
-          secondary: HexColor("#FB6F92"),
-          tertiary: HexColor("#60b394"),
+          secondary: Colors.blue,
+          tertiary: Colors.grey.shade800,
         ),
       ),
       debugShowCheckedModeBanner: false,

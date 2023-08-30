@@ -1,23 +1,28 @@
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
+  var selectedNavIndex = 0.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void onNavItemTapped(int index) {
+    // Update the selected index using the value assigned to selectedIndex
+    selectedNavIndex.value = index;
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
+  // final count = 0.obs;
+  // @override
+  // void onInit() {
+  //   super.onInit();
+  // }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
+  // @override
+  // void onReady() {
+  //   super.onReady();
+  // }
 
-  void increment() => count.value++;
+  // @override
+  // void onClose() {
+  //   super.onClose();
+  // }
+
+  // void increment() => count.value++;
 }

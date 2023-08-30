@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class ScaffoldContainer extends StatelessWidget {
   final dynamic children;
@@ -8,8 +7,13 @@ class ScaffoldContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HexColor("#f1faee"),
-      body: Padding(padding: const EdgeInsets.all(13), child: children),
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(13),
+          child: children,
+        ),
+      ),
     );
   }
 }

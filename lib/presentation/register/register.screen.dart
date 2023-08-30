@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kudi_mobile/infrastructure/components/buttons/primary_button.dart';
@@ -21,12 +22,15 @@ class RegisterPage extends GetView<RegisterController> {
         child: ListView(
           physics: const BouncingScrollPhysics(),
           children: [
+            const SizedBox(
+              height: 50,
+            ),
             Center(
               child: Image.asset(
                 'lib/infrastructure/assets/app/icon_app.png',
                 fit: BoxFit.cover,
                 // width: 135,
-                height: 135,
+                height: 96,
               ),
             ),
             const SizedBox(
@@ -35,11 +39,11 @@ class RegisterPage extends GetView<RegisterController> {
             const Center(
               child: Text(
                 'Register',
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
               ),
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
             FormInput(
                 textInputType: TextInputType.name,
@@ -56,7 +60,7 @@ class RegisterPage extends GetView<RegisterController> {
                 obscureText: false,
                 isPassword: false),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             FormInput(
                 textInputType: TextInputType.emailAddress,
@@ -67,7 +71,7 @@ class RegisterPage extends GetView<RegisterController> {
                 obscureText: false,
                 isPassword: false),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             FormInput(
                 textInputType: TextInputType.visiblePassword,
@@ -81,7 +85,7 @@ class RegisterPage extends GetView<RegisterController> {
                 obscureText: true,
                 isPassword: true),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             PrimaryButton(
               text: "Register",
@@ -92,25 +96,31 @@ class RegisterPage extends GetView<RegisterController> {
                 await Future.delayed(const Duration(seconds: 2));
 
                 // Return a value if necessary
-                return 'Operation completed';
+                return Get.back();
               },
             ),
             const SizedBox(
               height: 50,
             ),
-            GestureDetector(
-              onTap: () {},
-              child: const Center(
-                child: Text(
-                  'Already have an account? Login here!',
+            Center(
+              child: RichText(
+                  text: TextSpan(children: [
+                const TextSpan(
+                  text: 'Already have an account?',
                   style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    decoration: TextDecoration.underline,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
-              ),
+                TextSpan(
+                  text: ' Login here!',
+                  style: const TextStyle(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  recognizer: TapGestureRecognizer()..onTap = () => Get.back(),
+                )
+              ])),
             ),
           ],
         ),

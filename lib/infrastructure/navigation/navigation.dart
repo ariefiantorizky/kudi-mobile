@@ -27,7 +27,7 @@ class Nav {
   static List<GetPage> routes = [
     GetPage(
       name: Routes.HOME,
-      page: () => const HomeScreen(),
+      page: () => HomeScreen(),
       binding: HomeControllerBinding(),
     ),
     GetPage(name: Routes.LOGIN, page: () => const LoginPage()),

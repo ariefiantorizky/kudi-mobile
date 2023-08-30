@@ -31,16 +31,16 @@ class _FormInputState extends State<FormInput> {
       autofillHints: widget.autoFillHints,
       keyboardType: widget.textInputType,
       style: const TextStyle(
-        fontSize: 18,
+        fontSize: 14,
         color: Colors.black,
       ),
       controller: widget.controller,
       obscureText: widget.obscureText,
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.all(25.0),
+        contentPadding: const EdgeInsets.all(15.0),
         suffixIcon: widget.isPassword
             ? IconButton(
-                iconSize: 24,
+                iconSize: 20,
                 onPressed: () {
                   setState(() {
                     widget.obscureText = !widget.obscureText;
@@ -53,7 +53,7 @@ class _FormInputState extends State<FormInput> {
         suffixIconColor: Colors.grey.shade500,
         prefixIcon: Icon(
           widget.icon,
-          size: 24,
+          size: 20,
         ),
         prefixIconColor: Colors.black.withOpacity(0.45),
         enabledBorder: OutlineInputBorder(
