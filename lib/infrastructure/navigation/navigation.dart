@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kudi_mobile/presentation/register/register.screen.dart';
 
 import '../../config.dart';
 import '../../presentation/screens.dart';
@@ -27,9 +28,10 @@ class Nav {
   static List<GetPage> routes = [
     GetPage(
       name: Routes.HOME,
-      page: () => const HomeScreen(),
+      page: () => HomeScreen(),
       binding: HomeControllerBinding(),
     ),
-    GetPage(name: Routes.LOGIN, page: ()=>LoginPage())
+    GetPage(name: Routes.LOGIN, page: () => const LoginPage()),
+    GetPage(name: Routes.REGISTER, page: () => const RegisterPage())
   ];
 }
