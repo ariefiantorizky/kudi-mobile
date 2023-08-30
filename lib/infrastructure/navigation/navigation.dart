@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kudi_mobile/presentation/register/register.screen.dart';
 
 import '../../config.dart';
 import '../../presentation/screens.dart';
