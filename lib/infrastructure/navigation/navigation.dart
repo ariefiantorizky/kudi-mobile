@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kudi_mobile/infrastructure/navigation/bindings/controllers/favorites.controller.binding.dart';
 import 'package:kudi_mobile/infrastructure/navigation/bindings/controllers/fridge.controller.binding.dart';
+import 'package:kudi_mobile/infrastructure/navigation/bindings/controllers/profile.controller.binding.dart';
 import 'package:kudi_mobile/infrastructure/navigation/bindings/controllers/recipes.controller.binding.dart';
 import 'package:kudi_mobile/presentation/favorites/controllers/favorites.controller.dart';
+import 'package:kudi_mobile/presentation/recipes/recipes.screen.dart';
 import 'package:kudi_mobile/presentation/register/register.screen.dart';
 
 import '../../config.dart';
@@ -51,13 +53,18 @@ class Nav {
     ),
     GetPage(
       name: Routes.RECIPES,
-      page: () => const RecipeScreen(),
+      page: () => const RecipesScreen(),
       binding: RecipesControllerBinding(),
     ),
     GetPage(
       name: Routes.FAVORITES,
       page: () => const FavoritesScreen(),
       binding: FavoritesControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.PROFILE,
+      page: () => const ProfileScreen(),
+      binding: ProfileControllerBinding(),
     )
   ];
 }

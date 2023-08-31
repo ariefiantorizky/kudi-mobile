@@ -10,4 +10,5 @@ class Routes {
   static const FRIDGE = '/fridge';
   static const RECIPES = '/recipes';
   static const FAVORITES = '/favorites';
+  static const PROFILE = '/profile';
 }
