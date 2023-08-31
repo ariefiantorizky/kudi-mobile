@@ -14,15 +14,15 @@ class SecondaryButton extends StatelessWidget {
     return OutlinedButton(
       onPressed: onPressed,
       style: OutlinedButton.styleFrom(
-        padding: const EdgeInsets.all(15),
+        padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 30),
         side: BorderSide(
           width: 2,
           color: Theme.of(context).colorScheme.primary,
         ),
       ),
-      child: const Text(
-        'Logout',
-        style: TextStyle(color: Colors.black, fontSize: 14),
+      child: Text(
+        text,
+        style: const TextStyle(color: Colors.black, fontSize: 14),
       ),
     );
   }

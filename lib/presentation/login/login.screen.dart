@@ -1,9 +1,9 @@
+import 'package:carbon_icons/carbon_icons.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kudi_mobile/infrastructure/components/buttons/primary_button.dart';
 import 'package:kudi_mobile/infrastructure/components/forms/form_input.dart';
-import 'package:carbon_icons/carbon_icons.dart';
 import 'package:kudi_mobile/infrastructure/components/scaffold_container.dart';
 import 'package:kudi_mobile/infrastructure/navigation/routes.dart';
 import 'package:kudi_mobile/presentation/home/home.screen.dart';

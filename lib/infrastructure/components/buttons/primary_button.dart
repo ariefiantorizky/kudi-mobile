@@ -1,7 +1,5 @@
 import 'package:awaitable_button/awaitable_button.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class PrimaryButton extends StatelessWidget {
   final Future<dynamic> Function()? onPressed;
@@ -27,11 +25,14 @@ class PrimaryButton extends StatelessWidget {
       onError: onError,
       buttonStyle: ButtonStyle(
         padding: const MaterialStatePropertyAll<EdgeInsetsGeometry?>(
-            EdgeInsets.all(15)),
+          EdgeInsets.symmetric(vertical: 13, horizontal: 30),
+        ),
         textStyle: const MaterialStatePropertyAll<TextStyle>(
-            TextStyle(color: Colors.white, fontSize: 14)),
+          TextStyle(color: Colors.white, fontSize: 14),
+        ),
         backgroundColor: MaterialStatePropertyAll<Color>(
-            Theme.of(context).colorScheme.primary),
+          Theme.of(context).colorScheme.primary,
+        ),
       ),
 
       indicatorColor: Theme.of(context).colorScheme.secondary,

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:carbon_icons/carbon_icons.dart';
+import 'package:flutter/material.dart';
 
 class FormInput extends StatefulWidget {
   final TextInputType? textInputType;
