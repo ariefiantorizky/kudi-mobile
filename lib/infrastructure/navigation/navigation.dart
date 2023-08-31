@@ -4,6 +4,7 @@ import 'package:kudi_mobile/infrastructure/navigation/bindings/controllers/favor
 import 'package:kudi_mobile/infrastructure/navigation/bindings/controllers/fridge.controller.binding.dart';
 import 'package:kudi_mobile/infrastructure/navigation/bindings/controllers/profile.controller.binding.dart';
 import 'package:kudi_mobile/infrastructure/navigation/bindings/controllers/recipes.controller.binding.dart';
+import 'package:kudi_mobile/presentation/dashboard/dashboard.screen.dart';
 import 'package:kudi_mobile/presentation/favorites/controllers/favorites.controller.dart';
 import 'package:kudi_mobile/presentation/recipes/recipes.screen.dart';
 import 'package:kudi_mobile/presentation/register/register.screen.dart';
@@ -33,18 +34,9 @@ class EnvironmentsBadge extends StatelessWidget {
 class Nav {
   static List<GetPage> routes = [
     GetPage(
-      name: Routes.HOME,
-      page: () => const HomeScreen(),
-      binding: HomeControllerBinding(),
-    ),
-    GetPage(
-        name: Routes.LOGIN,
-        page: () => const LoginPage(),
-        binding: LoginControllerBinding()),
-    GetPage(
-      name: Routes.REGISTER,
-      page: () => const RegisterPage(),
-      binding: RegisterControllerBinding(),
+      name: Routes.DASHBOARD,
+      page: () => const DashboardScreen(),
+      binding: DashboardControllerBinding(),
     ),
     GetPage(
       name: Routes.FRIDGE,
@@ -62,9 +54,23 @@ class Nav {
       binding: FavoritesControllerBinding(),
     ),
     GetPage(
+      name: Routes.HOME,
+      page: () => const HomeScreen(),
+      binding: HomeControllerBinding(),
+    ),
+    GetPage(
       name: Routes.PROFILE,
       page: () => const ProfileScreen(),
       binding: ProfileControllerBinding(),
-    )
+    ),
+    GetPage(
+        name: Routes.LOGIN,
+        page: () => const LoginPage(),
+        binding: LoginControllerBinding()),
+    GetPage(
+      name: Routes.REGISTER,
+      page: () => const RegisterPage(),
+      binding: RegisterControllerBinding(),
+    ),
   ];
 }

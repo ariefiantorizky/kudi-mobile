@@ -26,12 +26,30 @@ class PrimaryButton extends StatelessWidget {
       whenComplete: whenComplete,
       onError: onError,
       buttonStyle: ButtonStyle(
-        padding: const MaterialStatePropertyAll<EdgeInsetsGeometry?>(
-            EdgeInsets.all(15)),
+        padding: const MaterialStatePropertyAll<EdgeInsetsGeometry>(
+            EdgeInsets.symmetric(vertical: 13, horizontal: 30)),
         textStyle: const MaterialStatePropertyAll<TextStyle>(
             TextStyle(color: Colors.white, fontSize: 14)),
-        backgroundColor: MaterialStatePropertyAll<Color>(
-            Theme.of(context).colorScheme.primary),
+        backgroundColor: MaterialStateProperty.resolveWith<Color>(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.disabled)) {
+              return Colors
+                  .grey.shade700; // Customize the disabled text color here
+            }
+            return Theme.of(context)
+                .colorScheme
+                .primary; // Default text color for other states
+          },
+        ),
+        foregroundColor: MaterialStateProperty.resolveWith<Color>(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.disabled)) {
+              return Colors
+                  .grey.shade300; // Customize the disabled text color here
+            }
+            return Colors.white; // Default text color for other states
+          },
+        ),
       ),
 
       indicatorColor: Theme.of(context).colorScheme.secondary,
