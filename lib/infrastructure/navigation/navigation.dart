@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kudi_mobile/infrastructure/navigation/bindings/controllers/favorites.controller.binding.dart';
+import 'package:kudi_mobile/infrastructure/navigation/bindings/controllers/fridge.controller.binding.dart';
+import 'package:kudi_mobile/infrastructure/navigation/bindings/controllers/recipes.controller.binding.dart';
+import 'package:kudi_mobile/presentation/favorites/controllers/favorites.controller.dart';
 import 'package:kudi_mobile/presentation/register/register.screen.dart';
 
 import '../../config.dart';
@@ -28,10 +32,32 @@ class Nav {
   static List<GetPage> routes = [
     GetPage(
       name: Routes.HOME,
-      page: () => HomeScreen(),
+      page: () => const HomeScreen(),
       binding: HomeControllerBinding(),
     ),
-    GetPage(name: Routes.LOGIN, page: () => const LoginPage()),
-    GetPage(name: Routes.REGISTER, page: () => const RegisterPage())
+    GetPage(
+        name: Routes.LOGIN,
+        page: () => const LoginPage(),
+        binding: LoginControllerBinding()),
+    GetPage(
+      name: Routes.REGISTER,
+      page: () => const RegisterPage(),
+      binding: RegisterControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.FRIDGE,
+      page: () => const FridgeScreen(),
+      binding: FridgeControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.RECIPES,
+      page: () => const RecipeScreen(),
+      binding: RecipesControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.FAVORITES,
+      page: () => const FavoritesScreen(),
+      binding: FavoritesControllerBinding(),
+    )
   ];
 }

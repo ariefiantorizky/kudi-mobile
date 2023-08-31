@@ -6,7 +6,6 @@ import 'package:kudi_mobile/infrastructure/components/forms/form_input.dart';
 import 'package:carbon_icons/carbon_icons.dart';
 import 'package:kudi_mobile/infrastructure/components/scaffold_container.dart';
 import 'package:kudi_mobile/infrastructure/navigation/routes.dart';
-import 'package:kudi_mobile/presentation/home/home.screen.dart';
 
 import 'controller/login.controller.dart';
 
@@ -79,7 +78,7 @@ class LoginPage extends GetView<LoginController> {
                 await Future.delayed(const Duration(seconds: 2));
 
                 // Return a value if necessary
-                return Get.offAll(HomeScreen());
+                return Get.offAndToNamed(Routes.HOME);
               },
             ),
             const SizedBox(

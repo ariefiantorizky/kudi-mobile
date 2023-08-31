@@ -6,7 +6,6 @@ environment:
   sdk: ">=3.0.5 <4.0.0"
 
 dependencies:
-  google_nav_bar: ^5.0.6
   awaitable_button: ^1.3.0
   carbon_icons: ^0.0.1+2
   cupertino_icons: ^1.0.2
@@ -50,3 +49,4 @@ flutter:
   assets:
     - lib/infrastructure/assets/app/
     - lib/infrastructure/assets/app/icon_app.png
+    - lib/infrastructure/assets/app/profile.jpg
