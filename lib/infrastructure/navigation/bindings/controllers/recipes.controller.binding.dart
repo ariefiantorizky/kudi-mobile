@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:kudi_mobile/presentation/recipe/controllers/recipe.controller.dart';
+import 'package:kudi_mobile/presentation/recipes/controllers/recipe.controller.dart';
 
 class RecipesControllerBinding extends Bindings {
   @override
